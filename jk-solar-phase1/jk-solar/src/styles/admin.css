@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { @apply bg-mist text-slate-800 antialiased; }
+@layer components {
+  .btn-primary { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-royal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun disabled:opacity-60; }
+  .field { @apply min-h-[44px] w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30; }
+}
