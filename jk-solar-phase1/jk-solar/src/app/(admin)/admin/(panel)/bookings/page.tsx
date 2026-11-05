@@ -1,5 +1,0 @@
-import { ResourceTable } from '@/components/admin/ResourceTable';
-export const metadata = { title: 'Bookings' };
-export default async function Page({ searchParams }: { searchParams: Promise<{ q?: string; f?: string }> }) {
-  return <ResourceTable title='Bookings' description="All booking requests. Status updates, notes and site-visit scheduling arrive in Phase 4." table='bookings' select='*, customers(full_name,mobile)' columns={[{key:'reference_no',label:'Reference'},{key:'customers.full_name',label:'Customer'},{key:'customers.mobile',label:'Mobile'},{key:'capacity_kw',label:'kW'},{key:'property_type',label:'Property',kind:'badge'},{key:'status',label:'Status',kind:'badge'},{key:'created_at',label:'Requested',kind:'date'}]} searchColumns={['reference_no']} filter={{param:'f',column:'status',options:['request_received', 'under_review', 'contact_pending', 'site_visit_scheduled', 'quotation_sent', 'approved', 'installation_scheduled', 'installation_completed', 'cancelled']}} basePath='/admin/bookings' note="Phase 1 foundation: this list is live data protected by Row Level Security. Add/edit forms arrive in Phase 4." searchParams={await searchParams} />;
-}
